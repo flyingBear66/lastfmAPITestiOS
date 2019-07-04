@@ -6,6 +6,13 @@ target 'LastFMAPITest' do
   use_frameworks!
 
   # Pods for LastFMAPITest
+  pod 'Alamofire'
+  pod 'AlamofireNetworkActivityLogger'
+  pod 'EmptyDataSet-Swift', '~> 4.2.0'
+  pod 'RxCocoa'
+  pod 'RxSwift'
+  pod 'SVProgressHUD'
+  pod 'Swinject'
 
   target 'LastFMAPITestTests' do
     inherit! :search_paths
