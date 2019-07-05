@@ -40,6 +40,7 @@
 		9E5F3EBE22CEC49E007BAFA9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3EBD22CEC49E007BAFA9 /* Endpoint.swift */; };
 		9E5F3EC022CEC4B2007BAFA9 /* LastFMAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3EBF22CEC4B2007BAFA9 /* LastFMAPI.swift */; };
 		9E5F3EC322CEC529007BAFA9 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3EC222CEC529007BAFA9 /* Album.swift */; };
+		FB01B3D522CFF05200D6217C /* AppDelegateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB01B3D422CFF05200D6217C /* AppDelegateHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		D293E1C97A658EA4F55799D6 /* Pods-LastFMAPITest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastFMAPITest.release.xcconfig"; path = "Target Support Files/Pods-LastFMAPITest/Pods-LastFMAPITest.release.xcconfig"; sourceTree = "<group>"; };
 		D7718F8934E8011618228C9C /* Pods-LastFMAPITestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastFMAPITestTests.debug.xcconfig"; path = "Target Support Files/Pods-LastFMAPITestTests/Pods-LastFMAPITestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F56681D6B5323C37E86D00E5 /* Pods-LastFMAPITest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastFMAPITest.debug.xcconfig"; path = "Target Support Files/Pods-LastFMAPITest/Pods-LastFMAPITest.debug.xcconfig"; sourceTree = "<group>"; };
+		FB01B3D422CFF05200D6217C /* AppDelegateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 		9E5F3E8322CEBB41007BAFA9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FB01B3D322CFF03C00D6217C /* Helpers */,
 				9E5F3EC122CEC514007BAFA9 /* Models */,
 			);
 			path = Common;
@@ -384,6 +387,14 @@
 				25BE64D62A9D86943AB01C5C /* Pods-LastFMAPITestUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FB01B3D322CFF03C00D6217C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FB01B3D422CFF05200D6217C /* AppDelegateHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -639,6 +650,7 @@
 				9E5F3EA522CEBE40007BAFA9 /* UIView+Constraints.swift in Sources */,
 				9E5F3E9B22CEBDAF007BAFA9 /* LTFMCollectionViewCell.swift in Sources */,
 				9E5F3EBE22CEC49E007BAFA9 /* Endpoint.swift in Sources */,
+				FB01B3D522CFF05200D6217C /* AppDelegateHelper.swift in Sources */,
 				9E5F3EBC22CEC492007BAFA9 /* AlamofireHTTPClient.swift in Sources */,
 				9E5F3EC322CEC529007BAFA9 /* Album.swift in Sources */,
 				9E5F3E8222CEB986007BAFA9 /* Navigation.swift in Sources */,
