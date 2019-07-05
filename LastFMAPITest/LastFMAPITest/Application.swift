@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+class Application {
+    
+    // MARK: - Dependencies
+    private let window: LTFMWindow
+    lazy var navigation: Navigation = Navigation(
+        window: self.window
+    )
+    
+    // MARK: - Lifecycle
+    init(window: LTFMWindow) {
+        self.window = window
+        self.window.makeKeyAndVisible()
+    }
+    
+}

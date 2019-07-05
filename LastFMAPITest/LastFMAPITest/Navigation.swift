@@ -12,15 +12,15 @@ import UIKit
 class Navigation {
     
     // MARK: - Private
-    public var navigationController: LTNavigationController
-    private var window: LTWindow
-    private var currentViewController: LTViewController!
+    public var navigationController: LTFMNavigationController
+    private var window: LTFMWindow
+    private var currentViewController: LTFMViewController!
     
     let container = Container()
     
     // MARK: - Lifecycle
-    init(window: LTWindow) {
-        self.navigationController = LTNavigationController()
+    init(window: LTFMWindow) {
+        self.navigationController = LTFMNavigationController()
         self.window = window
         
         registerApp()
@@ -32,14 +32,14 @@ extension Navigation {
     func getCurrentView() -> UIView {
         
         guard let topView = navigationController.topViewController?.view else {
-            return LTView()
+            return LTFMView()
         }
         
         return topView
     }
     
-    func firstScreenAsSplash() {
-        openSplash()
+    func openFirstScreenAlbumList() {
+        openAlbumList()
     }
     
 }
@@ -47,88 +47,16 @@ extension Navigation {
 // MARK: - Private
 extension Navigation {
     
-    // MARK: Native Networking Test with Marvel API
-    private func openSplash() {
-        currentViewController = container.resolve(SplashViewController.self)
-        navigateTo(viewContoller: currentViewController!, SplashViewController.self)
+    // MARK: Album List
+    private func openAlbumList() {
+        currentViewController = container.resolve(AlbumListViewController.self)!
+        navigateTo(viewContoller: currentViewController!, AlbumListViewController.self)
     }
-    
-    // MARK: Native Networking Test with Marvel API
-    private func openMainMenu() {
-        currentViewController = container.resolve(MainViewController.self)!
-        navigateTo(viewContoller: currentViewController!, MainViewController.self)
-    }
-    
-    // MARK: Native Networking Test with Marvel API
-    private func openNativeNetworkingTestScreens() {
-        currentViewController = container.resolve(HeroListViewController.self)!
-        pushTo(viewContoller: currentViewController, HeroListViewController.self)
-    }
-    
-    private func openHeroDetailScreen(withHeroId heroId: Int) {
-        let viewController: HeroDetailViewController = container.resolve(HeroDetailViewController.self)!
-        viewController.heroId = heroId
-        currentViewController = viewController
-        pushTo(viewContoller: currentViewController, HeroDetailViewController.self)
-    }
-    
-    private func openHeroSearchScreen() {
-        currentViewController = container.resolve(HeroSearchViewController.self)!
-        pushTo(viewContoller: currentViewController, HeroSearchViewController.self)
-    }
-    
-    // MARK: Empty Data Set
-    private func openEmptyDataSetScreens() {
-        currentViewController = container.resolve(MainEmptyDataSetListViewController.self)!
-        pushTo(viewContoller: currentViewController, MainEmptyDataSetListViewController.self)
-    }
-    
-    private func openEmptyDataSetList() {
-        currentViewController = container.resolve(EmptyDataSetListViewController.self)!
-        pushTo(viewContoller: currentViewController, EmptyDataSetListViewController.self)
-    }
-    
-    private func openEmptyDataSetListWithButton() {
-        currentViewController = container.resolve(EmptyDataSetListWithButtonViewController.self)!
-        pushTo(viewContoller: currentViewController, EmptyDataSetListWithButtonViewController.self)
-    }
-    
-    private func openEmptyDataSetListWithImage() {
-        currentViewController = container.resolve(EmptyDataSetListWithImageViewController.self)!
-        pushTo(viewContoller: currentViewController, EmptyDataSetListWithImageViewController.self)
-    }
-    
-    // MARK: RxSwift+Alamofire
-    private func openRxSwiftAlamofireScreens() {
-        currentViewController = container.resolve(ReposViewController.self)!
-        pushTo(viewContoller: currentViewController, ReposViewController.self)
-    }
-    
-    // MARK: GradientLoadingBar
-    private func openGradientLoadingBarScreens() {
-        currentViewController = container.resolve(GradientLoadingMainViewController.self)!
-        pushTo(viewContoller: currentViewController, GradientLoadingMainViewController.self)
-    }
-    
-    private func openGradientLoadingButton() {
-        currentViewController = container.resolve(GradientLoadingButtonViewController.self)!
-        pushTo(viewContoller: currentViewController, GradientLoadingButtonViewController.self)
-    }
-    
-    private func openGradientLoadingStatusBar() {
-        currentViewController = container.resolve(GradientLoadingStatusBarViewController.self)!
-        pushTo(viewContoller: currentViewController, GradientLoadingStatusBarViewController.self)
-    }
-    
-    private func openGradientLoadingStatusBarWithSafeArea() {
-        currentViewController = container.resolve(GradientLoadingStatusBarWithSafeAreaViewController.self)!
-        pushTo(viewContoller: currentViewController, GradientLoadingStatusBarWithSafeAreaViewController.self)
-    }
-    
-    // MARK: Stretchy Header
-    private func openMainStretchyHeaderViewController() {
-        currentViewController = container.resolve(MainStretchyHeaderViewController.self)!
-        pushTo(viewContoller: currentViewController, MainStretchyHeaderViewController.self)
+
+    // MARK: Album Detail
+    private func openAlbumDetail() {
+        currentViewController = container.resolve(AlbumListViewController.self)!
+        navigateTo(viewContoller: currentViewController!, AlbumListViewController.self)
     }
     
 }
@@ -136,31 +64,31 @@ extension Navigation {
 // MARK: - Navigate methods
 extension Navigation {
     
-    private func showInWindow<T: LTViewController>(viewContoller: Any, _:T.Type) {
+    private func showInWindow<T: LTFMViewController>(viewContoller: Any, _:T.Type) {
         self.window.rootViewController = (viewContoller as! T)
         self.window.makeKeyAndVisible()
     }
     
-    private func navigateTo<T: LTViewController>(viewContoller: Any, _:T.Type) {
-        self.navigationController = LTNavigationController(rootViewController: (viewContoller as! T))
+    private func navigateTo<T: LTFMViewController>(viewContoller: Any, _:T.Type) {
+        self.navigationController = LTFMNavigationController(rootViewController: (viewContoller as! T))
         self.window.rootViewController = (viewContoller as! T).navigationController
     }
     
-    private func pushTo<T: LTViewController>(viewContoller: Any, _:T.Type) {
+    private func pushTo<T: LTFMViewController>(viewContoller: Any, _:T.Type) {
         self.navigationController.pushViewController((viewContoller as! T), animated: true)
     }
     
-    private func present<T: LTViewController>(viewContoller: Any, _:T.Type,
+    private func present<T: LTFMViewController>(viewContoller: Any, _:T.Type,
                                               animated: Bool = true, completion: (() -> Void)?) {
         present(viewContoller: viewContoller, T.self, withNavigationController: false, animated: animated, completion: completion)
     }
     
-    private func present<T: LTViewController>(viewContoller: Any, _:T.Type, withNavigationController: Bool,
+    private func present<T: LTFMViewController>(viewContoller: Any, _:T.Type, withNavigationController: Bool,
                                               animated: Bool = true, completion: (() -> Void)?) {
-        let topViewController = self.navigationController.topViewController as! LTViewController
+        let topViewController = self.navigationController.topViewController as! LTFMViewController
         
         if withNavigationController {
-            topViewController.present(LTNavigationController(rootViewController: (viewContoller as! T)), animated: animated, completion: completion)
+            topViewController.present(LTFMNavigationController(rootViewController: (viewContoller as! T)), animated: animated, completion: completion)
         } else {
             topViewController.present((viewContoller as! T), animated: animated, completion: completion)
         }
@@ -172,235 +100,42 @@ extension Navigation {
     
     private func registerApp() {
         registerHTTPClients()
-        registerGradientLoadingBar()
-        registerEmptyDataSetScreens()
-        registerMainScreen()
-        registerNativeNetworkingScreens()
-        registerSplash()
-        registerRxSwiftScreens()
-        registerStretchyHeaderScreens()
-    }
-    
-    private func registerSplash() {
-        // Services
-        container.register(SplashService.self) { _ in
-            SplashService()
-        }
-        
-        // ViewModels
-        container.register(SplashViewModel.self) { r in
-            let viewModel = SplashViewModel(withService: r.resolve(SplashService.self)!)
-            
-            viewModel.showMainMenu = { [unowned self] in
-                self.openMainMenu()
-            }
-            
-            return viewModel
-        }
-        
-        // ViewControllers
-        container.register(SplashViewController.self) { r in
-            SplashViewController(withViewModel: r.resolve(SplashViewModel.self)!)
-        }
+        registerAlbumList()
+        registerAlbumDetail()
     }
     
     private func registerHTTPClients() {
-        // Networking Clients
-        container.register(MarvelAPIClient.self) { _ in MarvelAPIClient(publicKey: "8b588a7a6c43e67b5a8baea03512f8db",
-                                                                        privateKey: "c1fdb043e31867a447e8b1cb9232e649ae7ebf8f")}
-        container.register(AlamofireHTTPClient.self) { _ in AlamofireHTTPClient()}
+        // Networking Client
+        container.register(AlamofireHTTPClient.self) { _ in AlamofireHTTPClient(apiKey: "9619b9c2e277142fe3eef5e33bc58ac1",
+                                                                                sharedSecret: "336112097892300d8458142ccfe90a62")}
     }
     
-    private func registerGradientLoadingBar() {
-        // ViewModels
-        container.register(GradientLoadingMainViewModel.self) { _ in
-            let viewModel = GradientLoadingMainViewModel()
-            
-            viewModel.showButtonScreens = { [unowned self] in
-                self.openGradientLoadingButton()
-            }
-            
-            viewModel.showStatusBarScreens = { [unowned self] in
-                self.openGradientLoadingStatusBar()
-            }
-            
-            viewModel.showStatusBarWithSafeAreaScreens = { [unowned self] in
-                self.openGradientLoadingStatusBarWithSafeArea()
-            }
-            return viewModel
-        }
-        
-        container.register(GradientLoadingButtonViewModel.self) { _ in
-            GradientLoadingButtonViewModel()
-        }
-        
-        container.register(GradientLoadingStatusBarViewModel.self) { _ in
-            GradientLoadingStatusBarViewModel()
-        }
-        
-        container.register(GradientLoadingStatusBarWithSafeAreaViewModel.self) { _ in
-            GradientLoadingStatusBarWithSafeAreaViewModel()
-        }
-        
-        // ViewControllers
-        container.register(GradientLoadingMainViewController.self) { r in
-            GradientLoadingMainViewController(withViewModel: r.resolve(GradientLoadingMainViewModel.self)!)
-        }
-        
-        container.register(GradientLoadingButtonViewController.self) { r in
-            GradientLoadingButtonViewController(withViewModel: r.resolve(GradientLoadingButtonViewModel.self)!)
-        }
-        
-        container.register(GradientLoadingStatusBarViewController.self) { r in
-            GradientLoadingStatusBarViewController(withViewModel: r.resolve(GradientLoadingStatusBarViewModel.self)!)
-        }
-        
-        container.register(GradientLoadingStatusBarWithSafeAreaViewController.self) { r in
-            GradientLoadingStatusBarWithSafeAreaViewController(withViewModel: r.resolve(GradientLoadingStatusBarWithSafeAreaViewModel.self)!)
-        }
-    }
-    
-    private func registerNativeNetworkingScreens() {
+    private func registerAlbumList() {
         // Services
-        container.register(HeroListService.self) { r in
-            HeroListService(marvelAPIClient: r.resolve(MarvelAPIClient.self)!)
-        }
-        container.register(HeroDetailService.self) { r in
-            HeroDetailService(marvelAPIClient: r.resolve(MarvelAPIClient.self)!)
-        }
-        container.register(HeroSearchService.self) { r in
-            HeroSearchService(marvelAPIClient: r.resolve(MarvelAPIClient.self)!)
-        }
-        
-        // ViewModel
-        container.register(HeroListViewModel.self) { r in
-            // TODO: make it work with favorited closures.
-            //        heroDetailViewModel.favorited.bind { favorited in
-            //            favoritedClosure(favorited)
-            //        }
-            let viewModel = HeroListViewModel(withService: r.resolve(HeroListService.self)!)
-            
-            viewModel.showHeroSearch = { [unowned self] in
-                self.openHeroSearchScreen()
-            }
-            
-            viewModel.showHeroDetail = { [unowned self] heroId in
-                self.openHeroDetailScreen(withHeroId: heroId)
-            }
-            return viewModel
-        }
-        container.register(HeroDetailViewModel.self) { r in
-            HeroDetailViewModel(withService: r.resolve(HeroDetailService.self)!)
-        }
-        container.register(HeroDetailViewModel.self) { r in
-            HeroDetailViewModel(withService: r.resolve(HeroDetailService.self)!)
-        }
-        container.register(HeroSearchViewModel.self) { r in
-            HeroSearchViewModel(withService: r.resolve(HeroSearchService.self)!)
-        }
-        
-        // ViewControllers
-        container.register(HeroListViewController.self) { r in
-            HeroListViewController(withViewModel: r.resolve(HeroListViewModel.self)!)
-        }
-        container.register(HeroDetailViewController.self) { r in
-            HeroDetailViewController(withViewModel: r.resolve(HeroDetailViewModel.self)!)
-        }
-        container.register(HeroSearchViewController.self) { r in
-            HeroSearchViewController(withViewModel: r.resolve(HeroSearchViewModel.self)!)
-        }
-    }
-    
-    private func registerEmptyDataSetScreens() {
-        // ViewModels
-        container.register(MainEmptyDataSetListViewModel.self) { r in
-            let viewModel = MainEmptyDataSetListViewModel()
-            
-            viewModel.showEmptyDataSetList = { [unowned self] in
-                self.openEmptyDataSetList()
-            }
-            
-            viewModel.showEmptyDataSetListWithImage = { [unowned self] in
-                self.openEmptyDataSetListWithImage()
-            }
-            
-            viewModel.showEmptyDataSetListWithButton = { [unowned self] in
-                self.openEmptyDataSetListWithButton()
-            }
-            return viewModel
-        }
-        
-        // ViewControllers
-        container.register(MainEmptyDataSetListViewController.self) { r in
-            MainEmptyDataSetListViewController(withViewModel: r.resolve(MainEmptyDataSetListViewModel.self)!)
-        }
-        container.register(EmptyDataSetListViewController.self) { _ in
-            EmptyDataSetListViewController()
-        }
-        container.register(EmptyDataSetListWithButtonViewController.self) { _ in
-            EmptyDataSetListWithButtonViewController()
-        }
-        container.register(EmptyDataSetListWithImageViewController.self) { _ in
-            EmptyDataSetListWithImageViewController()
-        }
-    }
-    
-    private func registerMainScreen() {
-        // Services
-        container.register(MainService.self) { r in MainService(marvelAPIClient: r.resolve(MarvelAPIClient.self)!,
-                                                                githubAPIClient: r.resolve(AlamofireHTTPClient.self)!)}
+        container.register(AlbumListService.self) { r in AlbumListService(lastFMAPIClient: r.resolve(AlamofireHTTPClient.self)!)}
         
         // ViewModels
-        container.register(MainViewModel.self) { r in
-            let viewModel = MainViewModel(withService: r.resolve(MainService.self)!)
-            viewModel.showNativeNetworkingScreens = { [unowned self] in
-                self.openNativeNetworkingTestScreens()
-            }
-            
-            viewModel.showEmptyDataSet = { [unowned self] in
-                self.openEmptyDataSetScreens()
-            }
-            
-            viewModel.showRxSwiftScreens = { [unowned self] in
-                self.openRxSwiftAlamofireScreens()
-            }
-            
-            viewModel.showGradientLoadingBarScreens = { [unowned self] in
-                self.openGradientLoadingBarScreens()
-            }
-            
-            viewModel.showStretchyHeaderScreens = { [unowned self] in
-                self.openMainStretchyHeaderViewController()
-            }
+        container.register(AlbumListViewModel.self) { r in
+            let viewModel = AlbumListViewModel(service: r.resolve(AlbumListService.self)!)
+//            viewModel.showNativeNetworkingScreens = { [unowned self] in
+//                self.openNativeNetworkingTestScreens()
+//            }
             
             return viewModel
         }
         
         // ViewController
-        container.register(MainViewController.self) { r in MainViewController(withViewModel: r.resolve(MainViewModel.self)!)}
+        container.register(AlbumListViewController.self) { r in AlbumListViewController(viewModel: r.resolve(AlbumListViewModel.self)!)}
     }
     
-    private func registerRxSwiftScreens() {
+    private func registerAlbumDetail() {
         // Services
-        container.register(ReposService.self) { r in
-            ReposService(githubAPIClient: r.resolve(AlamofireHTTPClient.self)!)
-        }
         
         // ViewModels
-        container.register(ReposViewModel.self) { r in
-            ReposViewModel(service: r.resolve(ReposService.self)!)
-        }
+
         // ViewControllers
-        container.register(ReposViewController.self) { r in
-            ReposViewController(viewModel: r.resolve(ReposViewModel.self)!)
-        }
+
     }
-    
-    private func registerStretchyHeaderScreens() {
-        // ViewControllers
-        container.register(MainStretchyHeaderViewController.self) { r in
-            MainStretchyHeaderViewController(viewModel: r.resolve(ReposViewModel.self)!)
-        }
-    }
+
 }
 

@@ -2,6 +2,9 @@ PODS:
   - Alamofire (4.8.1)
   - AlamofireNetworkActivityLogger (2.3.0):
     - Alamofire (~> 4.6)
+  - CocoaLumberjack/Core (3.5.2)
+  - CocoaLumberjack/Swift (3.5.2):
+    - CocoaLumberjack/Core
   - EmptyDataSet-Swift (4.2.0)
   - RxAtomic (4.4.2)
   - RxCocoa (4.4.2):
@@ -14,6 +17,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireNetworkActivityLogger
+  - CocoaLumberjack/Swift
   - EmptyDataSet-Swift (~> 4.2.0)
   - RxCocoa
   - RxSwift
@@ -24,6 +28,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireNetworkActivityLogger
+    - CocoaLumberjack
     - EmptyDataSet-Swift
     - RxAtomic
     - RxCocoa
@@ -34,6 +39,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   AlamofireNetworkActivityLogger: 6f3076652ab7fa6c819b59be08ea038d339e36d8
+  CocoaLumberjack: 118bf4a820efc641f79fa487b75ed928dccfae23
   EmptyDataSet-Swift: 1fa0b35f530a35f852ecb2b53564728b0c300aaf
   RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
   RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
@@ -41,6 +47,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
 
-PODFILE CHECKSUM: 8da8a7c0e2bbc5f3f557015970608f1e731b34aa
+PODFILE CHECKSUM: 5d34eee8380ce12d588630521c5dcd326bae95e9
 
 COCOAPODS: 1.6.1

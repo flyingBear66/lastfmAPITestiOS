@@ -8,6 +8,7 @@ target 'LastFMAPITest' do
   # Pods for LastFMAPITest
   pod 'Alamofire'
   pod 'AlamofireNetworkActivityLogger'
+  pod 'CocoaLumberjack/Swift'
   pod 'EmptyDataSet-Swift', '~> 4.2.0'
   pod 'RxCocoa'
   pod 'RxSwift'

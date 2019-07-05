@@ -17,6 +17,29 @@
 		9E5F3E7222CEB76B007BAFA9 /* LastFMAPITestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3E7122CEB76B007BAFA9 /* LastFMAPITestUITests.swift */; };
 		9E5F3E8022CEB97B007BAFA9 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3E7F22CEB97B007BAFA9 /* Application.swift */; };
 		9E5F3E8222CEB986007BAFA9 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3E8122CEB986007BAFA9 /* Navigation.swift */; };
+		9E5F3E9122CEBC1B007BAFA9 /* LTFMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3E9022CEBC1B007BAFA9 /* LTFMViewController.swift */; };
+		9E5F3E9322CEBC39007BAFA9 /* LTFMNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3E9222CEBC39007BAFA9 /* LTFMNavigationController.swift */; };
+		9E5F3E9522CEBC68007BAFA9 /* LTFMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3E9422CEBC68007BAFA9 /* LTFMViewModel.swift */; };
+		9E5F3E9722CEBD81007BAFA9 /* LTFMWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3E9622CEBD81007BAFA9 /* LTFMWindow.swift */; };
+		9E5F3E9922CEBD99007BAFA9 /* LTFMCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3E9822CEBD99007BAFA9 /* LTFMCollectionView.swift */; };
+		9E5F3E9B22CEBDAF007BAFA9 /* LTFMCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3E9A22CEBDAF007BAFA9 /* LTFMCollectionViewCell.swift */; };
+		9E5F3E9D22CEBDC9007BAFA9 /* LTFMCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3E9C22CEBDC9007BAFA9 /* LTFMCollectionViewFlowLayout.swift */; };
+		9E5F3E9F22CEBDE4007BAFA9 /* LTFMImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3E9E22CEBDE4007BAFA9 /* LTFMImageView.swift */; };
+		9E5F3EA122CEBE01007BAFA9 /* LTFMScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3EA022CEBE01007BAFA9 /* LTFMScrollView.swift */; };
+		9E5F3EA322CEBE20007BAFA9 /* LTFMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3EA222CEBE20007BAFA9 /* LTFMView.swift */; };
+		9E5F3EA522CEBE40007BAFA9 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3EA422CEBE40007BAFA9 /* UIView+Constraints.swift */; };
+		9E5F3EA722CEBE8E007BAFA9 /* LTFMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3EA622CEBE8E007BAFA9 /* LTFMButton.swift */; };
+		9E5F3EA922CEBEA4007BAFA9 /* LTFMHeavyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3EA822CEBEA4007BAFA9 /* LTFMHeavyLabel.swift */; };
+		9E5F3EAB22CEBEB3007BAFA9 /* LTFMLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3EAA22CEBEB3007BAFA9 /* LTFMLabel.swift */; };
+		9E5F3EAD22CEBEBE007BAFA9 /* LTFMLightLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3EAC22CEBEBE007BAFA9 /* LTFMLightLabel.swift */; };
+		9E5F3EAF22CEBF9C007BAFA9 /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3EAE22CEBF9C007BAFA9 /* AlbumListViewController.swift */; };
+		9E5F3EB122CEBFAE007BAFA9 /* AlbumListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3EB022CEBFAE007BAFA9 /* AlbumListViewModel.swift */; };
+		9E5F3EB622CEC27E007BAFA9 /* LTFMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3EB522CEC27E007BAFA9 /* LTFMService.swift */; };
+		9E5F3EB822CEC333007BAFA9 /* AlbumListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3EB722CEC333007BAFA9 /* AlbumListService.swift */; };
+		9E5F3EBC22CEC492007BAFA9 /* AlamofireHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3EBB22CEC492007BAFA9 /* AlamofireHTTPClient.swift */; };
+		9E5F3EBE22CEC49E007BAFA9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3EBD22CEC49E007BAFA9 /* Endpoint.swift */; };
+		9E5F3EC022CEC4B2007BAFA9 /* LastFMAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3EBF22CEC4B2007BAFA9 /* LastFMAPI.swift */; };
+		9E5F3EC322CEC529007BAFA9 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3EC222CEC529007BAFA9 /* Album.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +77,29 @@
 		9E5F3E7322CEB76B007BAFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E5F3E7F22CEB97B007BAFA9 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		9E5F3E8122CEB986007BAFA9 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		9E5F3E9022CEBC1B007BAFA9 /* LTFMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTFMViewController.swift; sourceTree = "<group>"; };
+		9E5F3E9222CEBC39007BAFA9 /* LTFMNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTFMNavigationController.swift; sourceTree = "<group>"; };
+		9E5F3E9422CEBC68007BAFA9 /* LTFMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTFMViewModel.swift; sourceTree = "<group>"; };
+		9E5F3E9622CEBD81007BAFA9 /* LTFMWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTFMWindow.swift; sourceTree = "<group>"; };
+		9E5F3E9822CEBD99007BAFA9 /* LTFMCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTFMCollectionView.swift; sourceTree = "<group>"; };
+		9E5F3E9A22CEBDAF007BAFA9 /* LTFMCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTFMCollectionViewCell.swift; sourceTree = "<group>"; };
+		9E5F3E9C22CEBDC9007BAFA9 /* LTFMCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTFMCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		9E5F3E9E22CEBDE4007BAFA9 /* LTFMImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTFMImageView.swift; sourceTree = "<group>"; };
+		9E5F3EA022CEBE01007BAFA9 /* LTFMScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTFMScrollView.swift; sourceTree = "<group>"; };
+		9E5F3EA222CEBE20007BAFA9 /* LTFMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTFMView.swift; sourceTree = "<group>"; };
+		9E5F3EA422CEBE40007BAFA9 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		9E5F3EA622CEBE8E007BAFA9 /* LTFMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTFMButton.swift; sourceTree = "<group>"; };
+		9E5F3EA822CEBEA4007BAFA9 /* LTFMHeavyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTFMHeavyLabel.swift; sourceTree = "<group>"; };
+		9E5F3EAA22CEBEB3007BAFA9 /* LTFMLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTFMLabel.swift; sourceTree = "<group>"; };
+		9E5F3EAC22CEBEBE007BAFA9 /* LTFMLightLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTFMLightLabel.swift; sourceTree = "<group>"; };
+		9E5F3EAE22CEBF9C007BAFA9 /* AlbumListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
+		9E5F3EB022CEBFAE007BAFA9 /* AlbumListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewModel.swift; sourceTree = "<group>"; };
+		9E5F3EB522CEC27E007BAFA9 /* LTFMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTFMService.swift; sourceTree = "<group>"; };
+		9E5F3EB722CEC333007BAFA9 /* AlbumListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListService.swift; sourceTree = "<group>"; };
+		9E5F3EBB22CEC492007BAFA9 /* AlamofireHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireHTTPClient.swift; sourceTree = "<group>"; };
+		9E5F3EBD22CEC49E007BAFA9 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		9E5F3EBF22CEC4B2007BAFA9 /* LastFMAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastFMAPI.swift; sourceTree = "<group>"; };
+		9E5F3EC222CEC529007BAFA9 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		A071B272A361E3669F18D5DC /* Pods_LastFMAPITestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LastFMAPITestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCAF378B24DB7A7FD25BA1A4 /* Pods-LastFMAPITestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastFMAPITestUITests.debug.xcconfig"; path = "Target Support Files/Pods-LastFMAPITestUITests/Pods-LastFMAPITestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D293E1C97A658EA4F55799D6 /* Pods-LastFMAPITest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastFMAPITest.release.xcconfig"; path = "Target Support Files/Pods-LastFMAPITest/Pods-LastFMAPITest.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +170,10 @@
 		9E5F3E5022CEB768007BAFA9 /* LastFMAPITest */ = {
 			isa = PBXGroup;
 			children = (
+				9E5F3E8322CEBB41007BAFA9 /* Common */,
+				9E5F3E8422CEBB46007BAFA9 /* Infrastructure */,
+				9E5F3E8522CEBB50007BAFA9 /* Presentation */,
+				9E5F3E8622CEBB56007BAFA9 /* Screens */,
 				9E5F3E5122CEB768007BAFA9 /* AppDelegate.swift */,
 				9E5F3E7F22CEB97B007BAFA9 /* Application.swift */,
 				9E5F3E8122CEB986007BAFA9 /* Navigation.swift */,
@@ -150,6 +200,177 @@
 				9E5F3E7322CEB76B007BAFA9 /* Info.plist */,
 			);
 			path = LastFMAPITestUITests;
+			sourceTree = "<group>";
+		};
+		9E5F3E8322CEBB41007BAFA9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3EC122CEC514007BAFA9 /* Models */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9E5F3E8422CEBB46007BAFA9 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3EB222CEC222007BAFA9 /* Networking */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		9E5F3E8522CEBB50007BAFA9 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3E8E22CEBBEF007BAFA9 /* Controls */,
+				9E5F3E8F22CEBBF4007BAFA9 /* Extensions */,
+				9E5F3E8B22CEBBD2007BAFA9 /* ViewControllers */,
+				9E5F3E8C22CEBBDE007BAFA9 /* ViewModels */,
+				9E5F3E8D22CEBBE9007BAFA9 /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		9E5F3E8622CEBB56007BAFA9 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3E8722CEBB89007BAFA9 /* Albums */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		9E5F3E8722CEBB89007BAFA9 /* Albums */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3E8922CEBBAE007BAFA9 /* Services */,
+				9E5F3E8822CEBB9E007BAFA9 /* ViewControllers */,
+				9E5F3E8A22CEBBB3007BAFA9 /* ViewModels */,
+			);
+			path = Albums;
+			sourceTree = "<group>";
+		};
+		9E5F3E8822CEBB9E007BAFA9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3EAE22CEBF9C007BAFA9 /* AlbumListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9E5F3E8922CEBBAE007BAFA9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3EB722CEC333007BAFA9 /* AlbumListService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9E5F3E8A22CEBBB3007BAFA9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3EB022CEBFAE007BAFA9 /* AlbumListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9E5F3E8B22CEBBD2007BAFA9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3E9222CEBC39007BAFA9 /* LTFMNavigationController.swift */,
+				9E5F3E9022CEBC1B007BAFA9 /* LTFMViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9E5F3E8C22CEBBDE007BAFA9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3E9422CEBC68007BAFA9 /* LTFMViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9E5F3E8D22CEBBE9007BAFA9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3E9822CEBD99007BAFA9 /* LTFMCollectionView.swift */,
+				9E5F3E9A22CEBDAF007BAFA9 /* LTFMCollectionViewCell.swift */,
+				9E5F3E9C22CEBDC9007BAFA9 /* LTFMCollectionViewFlowLayout.swift */,
+				9E5F3E9E22CEBDE4007BAFA9 /* LTFMImageView.swift */,
+				9E5F3EA022CEBE01007BAFA9 /* LTFMScrollView.swift */,
+				9E5F3EA222CEBE20007BAFA9 /* LTFMView.swift */,
+				9E5F3E9622CEBD81007BAFA9 /* LTFMWindow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9E5F3E8E22CEBBEF007BAFA9 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3EA622CEBE8E007BAFA9 /* LTFMButton.swift */,
+				9E5F3EA822CEBEA4007BAFA9 /* LTFMHeavyLabel.swift */,
+				9E5F3EAA22CEBEB3007BAFA9 /* LTFMLabel.swift */,
+				9E5F3EAC22CEBEBE007BAFA9 /* LTFMLightLabel.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		9E5F3E8F22CEBBF4007BAFA9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3EA422CEBE40007BAFA9 /* UIView+Constraints.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9E5F3EB222CEC222007BAFA9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3EB422CEC267007BAFA9 /* Alamofire+RxSwift */,
+				9E5F3EB322CEC25D007BAFA9 /* Service */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9E5F3EB322CEC25D007BAFA9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3EB522CEC27E007BAFA9 /* LTFMService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		9E5F3EB422CEC267007BAFA9 /* Alamofire+RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3EBA22CEC475007BAFA9 /* HTTPClient */,
+				9E5F3EB922CEC46E007BAFA9 /* Models */,
+			);
+			path = "Alamofire+RxSwift";
+			sourceTree = "<group>";
+		};
+		9E5F3EB922CEC46E007BAFA9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3EBD22CEC49E007BAFA9 /* Endpoint.swift */,
+				9E5F3EBF22CEC4B2007BAFA9 /* LastFMAPI.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9E5F3EBA22CEC475007BAFA9 /* HTTPClient */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3EBB22CEC492007BAFA9 /* AlamofireHTTPClient.swift */,
+			);
+			path = HTTPClient;
+			sourceTree = "<group>";
+		};
+		9E5F3EC122CEC514007BAFA9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9E5F3EC222CEC529007BAFA9 /* Album.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		EF6EAFD75186AD5469FD3038 /* Pods */ = {
@@ -328,6 +549,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-LastFMAPITest/Pods-LastFMAPITest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityLogger/AlamofireNetworkActivityLogger.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/EmptyDataSet-Swift/EmptyDataSet_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -341,6 +563,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityLogger.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EmptyDataSet_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -404,9 +627,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E5F3EA122CEBE01007BAFA9 /* LTFMScrollView.swift in Sources */,
+				9E5F3EAF22CEBF9C007BAFA9 /* AlbumListViewController.swift in Sources */,
+				9E5F3EAB22CEBEB3007BAFA9 /* LTFMLabel.swift in Sources */,
+				9E5F3EC022CEC4B2007BAFA9 /* LastFMAPI.swift in Sources */,
+				9E5F3E9522CEBC68007BAFA9 /* LTFMViewModel.swift in Sources */,
+				9E5F3EB122CEBFAE007BAFA9 /* AlbumListViewModel.swift in Sources */,
+				9E5F3E9722CEBD81007BAFA9 /* LTFMWindow.swift in Sources */,
+				9E5F3EB622CEC27E007BAFA9 /* LTFMService.swift in Sources */,
+				9E5F3EB822CEC333007BAFA9 /* AlbumListService.swift in Sources */,
+				9E5F3EA522CEBE40007BAFA9 /* UIView+Constraints.swift in Sources */,
+				9E5F3E9B22CEBDAF007BAFA9 /* LTFMCollectionViewCell.swift in Sources */,
+				9E5F3EBE22CEC49E007BAFA9 /* Endpoint.swift in Sources */,
+				9E5F3EBC22CEC492007BAFA9 /* AlamofireHTTPClient.swift in Sources */,
+				9E5F3EC322CEC529007BAFA9 /* Album.swift in Sources */,
 				9E5F3E8222CEB986007BAFA9 /* Navigation.swift in Sources */,
+				9E5F3E9122CEBC1B007BAFA9 /* LTFMViewController.swift in Sources */,
+				9E5F3EAD22CEBEBE007BAFA9 /* LTFMLightLabel.swift in Sources */,
+				9E5F3EA722CEBE8E007BAFA9 /* LTFMButton.swift in Sources */,
+				9E5F3E9F22CEBDE4007BAFA9 /* LTFMImageView.swift in Sources */,
+				9E5F3EA322CEBE20007BAFA9 /* LTFMView.swift in Sources */,
+				9E5F3E9322CEBC39007BAFA9 /* LTFMNavigationController.swift in Sources */,
+				9E5F3E9922CEBD99007BAFA9 /* LTFMCollectionView.swift in Sources */,
 				9E5F3E8022CEB97B007BAFA9 /* Application.swift in Sources */,
 				9E5F3E5222CEB768007BAFA9 /* AppDelegate.swift in Sources */,
+				9E5F3E9D22CEBDC9007BAFA9 /* LTFMCollectionViewFlowLayout.swift in Sources */,
+				9E5F3EA922CEBEA4007BAFA9 /* LTFMHeavyLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,9 +13,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var application: Application?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        let window = LTFMWindow(frame: UIScreen.main.bounds)
+        self.application = Application(window: window)
+        self.window = window
+        
+        // Start app first Screen
+        self.application?.navigation.openFirstScreenAlbumList()
+        
         return true
     }
 
