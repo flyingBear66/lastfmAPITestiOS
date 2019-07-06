@@ -12,8 +12,10 @@ enum LastFMAPI {}
 
 extension LastFMAPI {
     
-    static func getFlyingBearPublicRepos() -> Endpoint<[Album]> {
-        return Endpoint(path: "")
+//    static func getTop100HiphopAlbums(limit: Int, offset: Int) -> Endpoint<[Album]> {
+    static func getTop100HiphopAlbums() -> Endpoint<APIResponse> {
+//        return Endpoint(path: "", parameters: ["limit": limit, "offset": offset])
+        return Endpoint(path: "tag.gettopalbums&tag=hiphop")
     }
 
 }

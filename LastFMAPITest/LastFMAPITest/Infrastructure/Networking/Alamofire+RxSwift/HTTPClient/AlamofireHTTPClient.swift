@@ -16,9 +16,13 @@ protocol ClientProtocol {
 
 final class AlamofireHTTPClient: ClientProtocol {
     private let manager: Alamofire.SessionManager
-    private let baseURL = URL(string: "http://ws.audioscrobbler.com/2.0")!
-    private let jsonURL = URL(string: "&format=json")!
-    
+//    private let baseURL = URL(string: "http://ws.audioscrobbler.com/2.0/?method=")!
+//    private let jsonURL = URL(string: "&format=json")!
+    private let baseURL = "http://ws.audioscrobbler.com/2.0/?method="
+    private let jsonURLString = "&format=json"
+
+    // http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=disco&api_key=YOUR_API_KEY&format=json
+
     private let queue = DispatchQueue(label: "httpsQueue")
     
     private let apiKey: String?
@@ -48,7 +52,7 @@ final class AlamofireHTTPClient: ClientProtocol {
     func request<Response>(_ endpoint: Endpoint<Response>) -> Single<Response> {
         return Single<Response>.create { observer in
             let request = self.manager.request(
-                self.url(path: endpoint.path),
+                self.url(path: "\(endpoint.path)&api_key=\(self.apiKey ?? "")&format=json"),
                 method: httpMethod(from: endpoint.method),
                 parameters: endpoint.parameters
             )
@@ -66,9 +70,9 @@ final class AlamofireHTTPClient: ClientProtocol {
             }
         }
     }
-    
+
     private func url(path: Path) -> URL {
-        return baseURL.appendingPathComponent(path)
+        return URL(string: "\(baseURL)\(path)")!
     }
 }
 

@@ -10,12 +10,15 @@ import UIKit
 
 class AlbumCollectionView: LTFMCollectionView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    init() {
+        let heroCollectionViewLayout = AlbumCollectionViewLayout()
+        super.init(frame: .zero, collectionViewLayout: heroCollectionViewLayout)
+        backgroundColor = .clear
+        register(AlbumCollectionViewCell.self, forCellWithReuseIdentifier: AlbumCellIdentifiers.albumCell)
     }
-    */
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
 }

@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+struct AlbumCellIdentifiers {
+    static let albumCell = "albumCell"
+}
+
+struct AlbumCellViewConstants {
+    static let cornerRadius = 5
+}

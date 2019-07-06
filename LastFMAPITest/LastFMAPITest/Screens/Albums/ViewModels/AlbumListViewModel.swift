@@ -7,15 +7,36 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class AlbumListViewModel: LTFMViewModel {
 
-    // MARK: - Variables    
-    internal var service: AlbumListService
+    // MARK: - Variables
+    public let albumCellViewModels: Variable<[AlbumCellViewModel]> = Variable([])
+
+    let service: AlbumListService
     
     // MARK: - Init
     init(service: AlbumListService) {
         self.service = service
+    }
+
+    // MARK: - Services
+    func getAlbums() {
+        self.loading.onNext(true)
+        service.getAlbums().bind { [weak self] albums in
+            let viewModels = self?.getAlbumCellViewModels(with: albums.albums.album)
+            self?.albumCellViewModels.value = viewModels ?? []
+            self?.loading.onNext(false)
+            }.disposed(by: disposeBag)
+    }
+
+    // MARK: - Helper Methods
+    func getAlbumCellViewModels(with albums:[Album]) -> [AlbumCellViewModel] {
+        return albums.map({ album -> AlbumCellViewModel in
+            AlbumCellViewModel(album: album)
+        })
     }
     
 }

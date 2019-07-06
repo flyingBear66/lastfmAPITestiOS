@@ -8,10 +8,12 @@
 
 import Foundation
 
-final class Album: Decodable {
-    let name: String
+public struct Album: Decodable {
+    public let name: String
+    public let image: [Image]
     
-    init(name: String) {
+    init(name: String, image: [Image]) {
         self.name = name
+        self.image = image
     }
 }
