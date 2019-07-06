@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct AlbumCellIdentifiers {
     static let albumCell = "albumCell"
@@ -14,4 +15,8 @@ struct AlbumCellIdentifiers {
 
 struct AlbumCellViewConstants {
     static let cornerRadius = 5
+    static let imageElement = 2
+    static let strokeWidth = -2.0
+    static let leading: CGFloat = 8
+    static let trailing: CGFloat = -8
 }

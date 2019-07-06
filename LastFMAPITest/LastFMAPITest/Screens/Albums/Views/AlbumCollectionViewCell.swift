@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class AlbumCollectionViewCell: LTFMCollectionViewCell {
 
@@ -59,25 +60,29 @@ class AlbumCollectionViewCell: LTFMCollectionViewCell {
                                       equal(self, \.trailingAnchor)])
         albumNameLabel.addConstraints([equal(self, \.centerXAnchor),
                                       equal(self, \.centerYAnchor, constant: frame.height / 5),
-                                      equal(self, \.leadingAnchor, constant: 8),
-                                      equal(self, \.trailingAnchor, constant: -8)])
+                                      equal(self, \.leadingAnchor, constant: AlbumCellViewConstants.leading),
+                                      equal(self, \.trailingAnchor, constant: AlbumCellViewConstants.trailing)])
     }
 
     func updateUI() {
         let strokeTextAttributes: [NSAttributedString.Key : Any] = [
             .strokeColor : UIColor.black,
             .foregroundColor : UIColor.white,
-            .strokeWidth : -2.0
+            .strokeWidth : AlbumCellViewConstants.strokeWidth
         ]
-//        self.albumNameLabel.attributedText = NSAttributedString(string: self.viewModel.heroName, attributes: strokeTextAttributes)
-//
-//        self.heroImageView.af_setImage(withURL: self.viewModel.heroImageURLString,
-//                                       placeholderImage: nil,
-//                                       filter: nil,
-//                                       progress: nil,
-//                                       progressQueue: DispatchQueue.main,
-//                                       imageTransition: .crossDissolve(0.3),
-//                                       runImageTransitionIfCached: false,
-//                                       completion: nil)
+        self.albumNameLabel.attributedText = NSAttributedString(string: self.viewModel.albumName, attributes: strokeTextAttributes)
+
+        guard let imageURL = self.viewModel.albumImageURL else {
+            return
+        }
+
+        self.albumImageView.af_setImage(withURL: imageURL ,
+                                        placeholderImage: nil,
+                                        filter: nil,
+                                        progress: nil,
+                                        progressQueue: DispatchQueue.main,
+                                        imageTransition: .crossDissolve(0.3),
+                                        runImageTransitionIfCached: false,
+                                        completion: nil)
     }
 }
