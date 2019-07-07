@@ -15,6 +15,9 @@ PODS:
     - RxAtomic (>= 4.4.2, ~> 4.4)
   - SVProgressHUD (2.2.5)
   - Swinject (2.6.0)
+  - TwitterCore (3.2.0)
+  - TwitterKit (3.4.2):
+    - TwitterCore (>= 3.2.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -26,6 +29,7 @@ DEPENDENCIES:
   - RxSwift
   - SVProgressHUD
   - Swinject
+  - TwitterKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -39,6 +43,8 @@ SPEC REPOS:
     - RxSwift
     - SVProgressHUD
     - Swinject
+    - TwitterCore
+    - TwitterKit
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
@@ -51,7 +57,9 @@ SPEC CHECKSUMS:
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
+  TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
+  TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
 
-PODFILE CHECKSUM: 7b61ff2fbc6b1074d0485a279eb6c334881a0f93
+PODFILE CHECKSUM: 7a704ea12ac80aeead28ab786acc969fd3ca44c0
 
 COCOAPODS: 1.6.1

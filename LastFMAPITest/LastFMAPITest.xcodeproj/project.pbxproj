@@ -55,6 +55,7 @@
 		FB0A627422D18FC100D37371 /* AlbumDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A627322D18FC100D37371 /* AlbumDetailViewModel.swift */; };
 		FB0A627722D1924F00D37371 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A627622D1924F00D37371 /* UserDefaultsKey.swift */; };
 		FB0A627922D1925C00D37371 /* HelperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A627822D1925C00D37371 /* HelperConstants.swift */; };
+		FB0A627D22D223FB00D37371 /* TwitterKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A627C22D223FB00D37371 /* TwitterKitHelper.swift */; };
 		FB11A20222D1695600B53825 /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB11A20122D1695600B53825 /* AlbumDetailViewController.swift */; };
 		FB11A20622D16C9700B53825 /* AlbumDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB11A20522D16C9700B53825 /* AlbumDetailService.swift */; };
 		FB11A20822D16CD500B53825 /* AlbumDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB11A20722D16CD500B53825 /* AlbumDetailResponse.swift */; };
@@ -141,6 +142,7 @@
 		FB0A627322D18FC100D37371 /* AlbumDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewModel.swift; sourceTree = "<group>"; };
 		FB0A627622D1924F00D37371 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		FB0A627822D1925C00D37371 /* HelperConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperConstants.swift; sourceTree = "<group>"; };
+		FB0A627C22D223FB00D37371 /* TwitterKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterKitHelper.swift; sourceTree = "<group>"; };
 		FB11A20122D1695600B53825 /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 		FB11A20522D16C9700B53825 /* AlbumDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailService.swift; sourceTree = "<group>"; };
 		FB11A20722D16CD500B53825 /* AlbumDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailResponse.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				FB01B3D422CFF05200D6217C /* AppDelegateHelper.swift */,
+				FB0A627C22D223FB00D37371 /* TwitterKitHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				9E5F3E4B22CEB768007BAFA9 /* Frameworks */,
 				9E5F3E4C22CEB768007BAFA9 /* Resources */,
 				112D3D09ADC0AA3ABDA72460 /* [CP] Embed Pods Frameworks */,
+				0A6BE9BDF58DF13987FAEEEA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -611,6 +615,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0A6BE9BDF58DF13987FAEEEA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LastFMAPITest/Pods-LastFMAPITest-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LastFMAPITest/Pods-LastFMAPITest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		0CF399281D74DFA4A200FFAF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -652,6 +678,8 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -667,6 +695,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -752,6 +782,7 @@
 				9E5F3EBC22CEC492007BAFA9 /* AlamofireHTTPClient.swift in Sources */,
 				9E5F3EC322CEC529007BAFA9 /* Album.swift in Sources */,
 				9E5F3E8222CEB986007BAFA9 /* Navigation.swift in Sources */,
+				FB0A627D22D223FB00D37371 /* TwitterKitHelper.swift in Sources */,
 				FB0A627722D1924F00D37371 /* UserDefaultsKey.swift in Sources */,
 				FB01B3E922D0115000D6217C /* Artist.swift in Sources */,
 				FB0A627422D18FC100D37371 /* AlbumDetailViewModel.swift in Sources */,

@@ -11,7 +11,8 @@ import RxSwift
 class AlbumDetailViewModel: LTFMViewModel {
 
     // MARK: - Variables
-    public var album: Album = Album()
+    public var album: Album?
+    public var albumDetail: AlbumDetail?
 
     public let albumName: Variable<String> = Variable("Init")
     public let albumImageURL: Variable<String> = Variable("Init")
@@ -30,21 +31,34 @@ class AlbumDetailViewModel: LTFMViewModel {
     // MARK: - Public Methods
     func getAlbumDetail() {
         self.loading.onNext(true)
+        guard let album = self.album else {
+            self.error.onNext(.internalError("Album is not initilized correctly"))
+            self.loading.onNext(false)
+            return
+        }
+
         service.getAlbumDetail(withAlbumName: album.name, artistName: album.artist.name).bind { [weak self] albumDetailResponse in
 
-            let album = albumDetailResponse.album
-            self?.albumName.value = album.name
-            if let wikiData = albumDetailResponse.album.wiki {
+            guard let albumDetail = albumDetailResponse.album else {
+                self?.error.onNext(.internalError("AlbumDetail is not fetched correctly"))
+                self?.loading.onNext(false)
+                return
+            }
+
+            self?.albumDetail = albumDetail
+
+            self?.albumName.value = albumDetail.name
+            if let wikiData = albumDetail.wiki {
                 self?.publishDate.value = "Publish Date: \(wikiData.published)"
             } else {
                 self?.publishDate.value = "Publish Date: N/a"
             }
-            self?.artistName.value = "Artist: \(albumDetailResponse.album.artist)"
-            self?.listenersCount.value = "Listeners Count: \(albumDetailResponse.album.listeners)"
-            self?.tracksCount.value = "Tracks Count: \(albumDetailResponse.album.tracks.track.count)"
+            self?.artistName.value = "Artist: \(albumDetail.artist)"
+            self?.listenersCount.value = "Listeners Count: \(albumDetail.listeners)"
+            self?.tracksCount.value = "Tracks Count: \(albumDetail.tracks.track.count)"
 
             self?.loading.onNext(false)
-            }.disposed(by: disposeBag)
+        }.disposed(by: disposeBag)
     }
 
     func setupAlbum(_ album: Album) {

@@ -63,6 +63,14 @@ class AlbumDetailViewController: LTFMViewController {
         return label
     }()
 
+    let shareTweetButton: LTFMButton = {
+        let button = LTFMButton()
+        button.addTarget(self, action: #selector(shareTweetButtonTapped), for: .touchUpInside)
+        button.setTitle("Share Album with Twitter", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
+        return button
+    }()
+
     // MARK: - Variables
     let viewModel: AlbumDetailViewModel
 
@@ -97,6 +105,7 @@ class AlbumDetailViewController: LTFMViewController {
         self.view.addSubview(publishDateLabel)
         self.view.addSubview(artistTitleLabel)
         self.view.addSubview(listenersCountLabel)
+        self.view.addSubview(shareTweetButton)
 
         albumNameLabel.addConstraints([equal(self.view, \.topAnchor, constant: self.view.frame.height / 6),
                                        equal(self.view, \.leadingAnchor, constant: AlbumViewConstants.leading),
@@ -117,6 +126,10 @@ class AlbumDetailViewController: LTFMViewController {
 
 
         listenersCountLabel.addConstraints([equal(self.view, \.leadingAnchor, constant: AlbumViewConstants.leading),
+                                         equal(self.view, \.trailingAnchor, constant: AlbumViewConstants.trailing)])
+
+        shareTweetButton.addConstraints([equal(self.view, \.bottomAnchor, constant: -(self.view.frame.height / 6)),
+                                         equal(self.view, \.leadingAnchor, constant: AlbumViewConstants.leading),
                                          equal(self.view, \.trailingAnchor, constant: AlbumViewConstants.trailing)])
 
     }
@@ -180,5 +193,11 @@ class AlbumDetailViewController: LTFMViewController {
             .disposed(by:self.disposeBag)
 
         self.viewModel.getAlbumDetail()
+    }
+
+    // MARK: - UI Actions
+
+    @objc func shareTweetButtonTapped() {
+        TwitterKitHelper.shareTweet(withViewController: self, album: self.viewModel.albumDetail)
     }
 }

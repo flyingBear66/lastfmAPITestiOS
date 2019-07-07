@@ -9,6 +9,6 @@
 import Foundation
 
 public struct AlbumDetailResponse: Decodable {
-    public let album: AlbumDetail
+    public let album: AlbumDetail?
 }
 

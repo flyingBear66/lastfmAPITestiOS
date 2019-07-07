@@ -17,6 +17,7 @@ struct AppDelegateHelper {
         AppDelegateHelper.setupCocoaLumberjackLogger()
         DDLogInfo("Setting Up Libraies on Launch")
         AppDelegateHelper.setupAlamofireNetworkLogger()
+        TwitterKitHelper.setupTwitterKit()
     }
 
     private static func setupCocoaLumberjackLogger() {

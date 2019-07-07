@@ -16,12 +16,8 @@ protocol ClientProtocol {
 
 final class AlamofireHTTPClient: ClientProtocol {
     private let manager: Alamofire.SessionManager
-//    private let baseURL = URL(string: "http://ws.audioscrobbler.com/2.0/?method=")!
-//    private let jsonURL = URL(string: "&format=json")!
     private let baseURL = "http://ws.audioscrobbler.com/2.0/?method="
     private let jsonURLString = "&format=json"
-
-    // http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=disco&api_key=YOUR_API_KEY&format=json
 
     private let queue = DispatchQueue(label: "httpsQueue")
     

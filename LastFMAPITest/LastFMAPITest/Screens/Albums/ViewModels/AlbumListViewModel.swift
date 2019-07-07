@@ -38,7 +38,7 @@ class AlbumListViewModel: LTFMViewModel {
                 self?.albumCellViewModels.value += viewModels
             }
             self?.loading.onNext(false)
-            }.disposed(by: disposeBag)
+        }.disposed(by: disposeBag)
     }
 
     // MARK: - Helper Methods
@@ -53,5 +53,5 @@ class AlbumListViewModel: LTFMViewModel {
         let selectedCellViewModel = albumCellViewModels.value[selectedIndexPath.row]
         self.showAlbumDetail!(selectedCellViewModel.album)
     }
-    
+
 }
