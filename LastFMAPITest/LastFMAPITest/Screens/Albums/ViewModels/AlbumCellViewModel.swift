@@ -11,7 +11,7 @@ import UIKit
 class AlbumCellViewModel: LTFMViewModel {
 
     // MARK: - Variables
-    private let album: Album
+    public let album: Album
     public let albumImageURL: URL?
     public let albumName: String
 
@@ -19,7 +19,7 @@ class AlbumCellViewModel: LTFMViewModel {
     init(album: Album) {
         self.album = album
         self.albumName = album.name
-        self.albumImageURL = URL(string:album.image[AlbumCellViewConstants.imageElement].imageURLString)
+        self.albumImageURL = URL(string:album.image[AlbumViewConstants.imageElement].imageURLString)
     }
 
     // MARK: - Public Methods

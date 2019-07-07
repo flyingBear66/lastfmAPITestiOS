@@ -26,7 +26,6 @@ final class AlamofireHTTPClient: ClientProtocol {
     private let queue = DispatchQueue(label: "httpsQueue")
     
     private let apiKey: String?
-    private let sharedSecret: String?
     
     init(accessToken: String) {
         var defaultHeaders = Alamofire.SessionManager.defaultHTTPHeaders
@@ -38,14 +37,12 @@ final class AlamofireHTTPClient: ClientProtocol {
         configuration.httpAdditionalHeaders = defaultHeaders
         
         self.apiKey = nil
-        self.sharedSecret = nil
-        
+
         self.manager = Alamofire.SessionManager(configuration: configuration)
     }
 
-    public init(apiKey: String, sharedSecret: String) {
+    public init(apiKey: String) {
         self.apiKey = apiKey
-        self.sharedSecret = sharedSecret
         self.manager = Alamofire.SessionManager(configuration: .default)
     }
     

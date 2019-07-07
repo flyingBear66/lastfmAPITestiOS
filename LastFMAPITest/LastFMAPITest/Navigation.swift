@@ -54,9 +54,13 @@ extension Navigation {
     }
 
     // MARK: Album Detail
-    private func openAlbumDetail() {
-        currentViewController = container.resolve(AlbumListViewController.self)!
-        navigateTo(viewContoller: currentViewController!, AlbumListViewController.self)
+    private func openAlbumDetail(withAlbum album: Album) {
+        let viewController: AlbumDetailViewController = container.resolve(AlbumDetailViewController.self)!
+
+        viewController.setupViewModel(withAlbum: album)
+        currentViewController = viewController
+
+        pushTo(viewContoller: currentViewController!, AlbumDetailViewController.self)
     }
     
 }
@@ -99,15 +103,14 @@ extension Navigation {
 extension Navigation {
     
     private func registerApp() {
-        registerHTTPClients()
+        registerHTTPClient()
         registerAlbumList()
         registerAlbumDetail()
     }
     
-    private func registerHTTPClients() {
+    private func registerHTTPClient() {
         // Networking Client
-        container.register(AlamofireHTTPClient.self) { _ in AlamofireHTTPClient(apiKey: "9619b9c2e277142fe3eef5e33bc58ac1",
-                                                                                sharedSecret: "336112097892300d8458142ccfe90a62")}
+        container.register(AlamofireHTTPClient.self) { _ in AlamofireHTTPClient(apiKey: "9619b9c2e277142fe3eef5e33bc58ac1")}
     }
     
     private func registerAlbumList() {
@@ -117,10 +120,11 @@ extension Navigation {
         // ViewModels
         container.register(AlbumListViewModel.self) { r in
             let viewModel = AlbumListViewModel(service: r.resolve(AlbumListService.self)!)
-//            viewModel.showNativeNetworkingScreens = { [unowned self] in
-//                self.openNativeNetworkingTestScreens()
-//            }
-            
+
+            viewModel.showAlbumDetail = { [unowned self] album in
+                self.openAlbumDetail(withAlbum: album)
+            }
+
             return viewModel
         }
         
@@ -130,11 +134,13 @@ extension Navigation {
     
     private func registerAlbumDetail() {
         // Services
-        
+        container.register(AlbumDetailService.self) { r in AlbumDetailService(lastFMAPIClient: r.resolve(AlamofireHTTPClient.self)!)}
+
         // ViewModels
+        container.register(AlbumDetailViewModel.self) { r in AlbumDetailViewModel(service: r.resolve(AlbumDetailService.self)!)}
 
         // ViewControllers
-
+        container.register(AlbumDetailViewController.self) { r in AlbumDetailViewController(viewModel: r.resolve(AlbumDetailViewModel.self)!)}
     }
 
 }

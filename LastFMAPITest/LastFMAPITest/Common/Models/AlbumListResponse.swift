@@ -1,5 +1,5 @@
 //
-//  APIResponse.swift
+//  AlbumListResponse.swift
 //  LastFMAPITest
 //
 //  Created by Ozgun Emre Zor on 06/07/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct APIResponse: Decodable {
+public struct AlbumListResponse: Decodable {
     public let albums: AlbumsResponse
 }
 

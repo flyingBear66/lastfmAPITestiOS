@@ -50,7 +50,7 @@ class AlbumCollectionViewCell: LTFMCollectionViewCell {
 
         backgroundColor = .blue
         clipsToBounds = true
-        layer.cornerRadius = CGFloat(AlbumCellViewConstants.cornerRadius)
+        layer.cornerRadius = CGFloat(AlbumViewConstants.cornerRadius)
 
         addSubview(albumImageView)
         addSubview(albumNameLabel)
@@ -60,15 +60,15 @@ class AlbumCollectionViewCell: LTFMCollectionViewCell {
                                       equal(self, \.trailingAnchor)])
         albumNameLabel.addConstraints([equal(self, \.centerXAnchor),
                                       equal(self, \.centerYAnchor, constant: frame.height / 5),
-                                      equal(self, \.leadingAnchor, constant: AlbumCellViewConstants.leading),
-                                      equal(self, \.trailingAnchor, constant: AlbumCellViewConstants.trailing)])
+                                      equal(self, \.leadingAnchor, constant: AlbumViewConstants.leading),
+                                      equal(self, \.trailingAnchor, constant: AlbumViewConstants.trailing)])
     }
 
     func updateUI() {
         let strokeTextAttributes: [NSAttributedString.Key : Any] = [
             .strokeColor : UIColor.black,
             .foregroundColor : UIColor.white,
-            .strokeWidth : AlbumCellViewConstants.strokeWidth
+            .strokeWidth : AlbumViewConstants.strokeWidth
         ]
         self.albumNameLabel.attributedText = NSAttributedString(string: self.viewModel.albumName, attributes: strokeTextAttributes)
 

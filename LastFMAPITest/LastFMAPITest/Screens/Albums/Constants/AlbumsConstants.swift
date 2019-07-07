@@ -13,7 +13,7 @@ struct AlbumCellIdentifiers {
     static let albumCell = "albumCell"
 }
 
-struct AlbumCellViewConstants {
+struct AlbumViewConstants {
     static let cornerRadius = 5
     static let imageElement = 2
     static let strokeWidth = -2.0

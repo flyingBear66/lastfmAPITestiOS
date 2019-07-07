@@ -10,7 +10,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol AlbumListViewModelEvents {
+    var showAlbumDetail: ((Album) -> Void)? {get set}
+}
+
 class AlbumListViewModel: LTFMViewModel {
+
+    // MARK: - Events
+    var showAlbumDetail: ((Album) -> Void)?
 
     // MARK: - Variables
     public let albumCellViewModels: Variable<[AlbumCellViewModel]> = Variable([])
@@ -37,6 +44,12 @@ class AlbumListViewModel: LTFMViewModel {
         return albums.map({ album -> AlbumCellViewModel in
             AlbumCellViewModel(album: album)
         })
+    }
+
+    // MARK: - Public Methods
+    func openScreen(withSelectedIndexPath selectedIndexPath: IndexPath) {
+        let selectedCellViewModel = albumCellViewModels.value[selectedIndexPath.row]
+        self.showAlbumDetail!(selectedCellViewModel.album)
     }
     
 }

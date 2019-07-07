@@ -15,7 +15,7 @@ class AlbumListService: LTFMService {
     let limit = 20
 
 //    func getAlbums() -> Observable<[Album]> {APIResponse
-    func getAlbums() -> Observable<APIResponse> {
+    func getAlbums() -> Observable<AlbumListResponse> {
 //        return lastFMAPIClient.request(LastFMAPI.getTop100HiphopAlbums(limit: limit, offset: offset)).asObservable()
         return lastFMAPIClient.request(LastFMAPI.getTop100HiphopAlbums()).asObservable()
     }

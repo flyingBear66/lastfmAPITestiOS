@@ -60,10 +60,10 @@ class AlbumListViewController: LTFMViewController {
             .subscribe(onNext: { loading in
                 if loading {
                     print("Loading")
-//                    self.showLoadingIndicator()
+                    self.showLoadingIndicator( )
                 } else {
                     print("Finished")
-//                    self.hideLoadingIndicator()
+                    self.hideLoadingIndicator()
                 }
             }).disposed(by: disposeBag)
 
@@ -106,6 +106,10 @@ extension AlbumListViewController: UICollectionViewDataSource, UICollectionViewD
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCellIdentifiers.albumCell, for: indexPath) as! AlbumCollectionViewCell
         cell.viewModel = cellViewModel
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.openScreen(withSelectedIndexPath: indexPath)
     }
 }
 

@@ -11,9 +11,11 @@ import Foundation
 public struct Album: Decodable {
     public let name: String
     public let image: [Image]
-    
-    init(name: String, image: [Image]) {
-        self.name = name
-        self.image = image
+    public let artist: Artist
+
+    init() {
+        self.name = "N/a"
+        self.image = []
+        self.artist = Artist(name: "N/a")
     }
 }
