@@ -51,6 +51,8 @@ class AlbumCollectionViewCell: LTFMCollectionViewCell {
         backgroundColor = .lightGray
         clipsToBounds = true
         layer.cornerRadius = CGFloat(AlbumViewConstants.cornerRadius)
+        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.borderWidth = AlbumViewConstants.borderWidth
 
         addSubview(albumImageView)
         addSubview(albumNameLabel)

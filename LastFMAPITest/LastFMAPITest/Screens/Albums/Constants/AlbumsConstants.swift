@@ -14,7 +14,8 @@ struct AlbumCellIdentifiers {
 }
 
 struct AlbumViewConstants {
-    static let cornerRadius = 5
+    static let cornerRadius: CGFloat = 5
+    static let borderWidth: CGFloat = 1
     static let imageElement = 2
     static let strokeWidth = -2.0
     static let leading: CGFloat = 8
