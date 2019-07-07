@@ -9,6 +9,7 @@
 import AlamofireNetworkActivityLogger
 import CocoaLumberjack
 import Foundation
+import StoreKit
 
 struct AppDelegateHelper {
 
@@ -31,5 +32,22 @@ struct AppDelegateHelper {
     private static func setupAlamofireNetworkLogger() {
         DDLogInfo("Setting Up Alamofire Network Activity Logger")
         NetworkActivityLogger.shared.startLogging()
+    }
+
+
+    static func showAppStoreReviewIfNecessary() {
+        var openingCount = UserDefaults.standard.integer(forKey: UserDefaultsKey.appOpeningCount)
+
+        if openingCount == HelperConstants.appOpeningLimitForStoreReview {
+            SKStoreReviewController.requestReview()
+            openingCount = 0
+            UserDefaults.standard.set(openingCount, forKey: UserDefaultsKey.appOpeningCount)
+        }
+    }
+
+    static func incrementOpeningCount() {
+        var openingCount = UserDefaults.standard.integer(forKey: UserDefaultsKey.appOpeningCount)
+        openingCount += 1
+        UserDefaults.standard.set(openingCount, forKey: UserDefaultsKey.appOpeningCount)
     }
 }

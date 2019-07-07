@@ -12,10 +12,8 @@ enum LastFMAPI {}
 
 extension LastFMAPI {
     
-//    static func getTop100HiphopAlbums(limit: Int, offset: Int) -> Endpoint<[Album]> {
-    static func getTop100HiphopAlbums() -> Endpoint<AlbumListResponse> {
-//        return Endpoint(path: "", parameters: ["limit": limit, "offset": offset])
-        return Endpoint(path: "tag.gettopalbums&tag=hiphop")
+    static func getTop100HiphopAlbums(page: Int, albumPerPage: Int) -> Endpoint<AlbumListResponse> {
+        return Endpoint(path: "tag.gettopalbums&tag=hiphop&page=\(page)&limit=\(albumPerPage)")
     }
 
     static func getAlbumDetail(withAlbumName albumName: String, artistName: String) -> Endpoint<AlbumDetailResponse> {

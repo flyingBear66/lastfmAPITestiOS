@@ -59,10 +59,8 @@ class AlbumListViewController: LTFMViewController {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { loading in
                 if loading {
-                    print("Loading")
-                    self.showLoadingIndicator( )
+                    self.showLoadingIndicator()
                 } else {
-                    print("Finished")
                     self.hideLoadingIndicator()
                 }
             }).disposed(by: disposeBag)
@@ -110,6 +108,12 @@ extension AlbumListViewController: UICollectionViewDataSource, UICollectionViewD
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.openScreen(withSelectedIndexPath: indexPath)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if !self.loading && indexPath.row == viewModel.albumCellViewModels.value.count - 2 {
+            viewModel.getAlbums()
+        }
     }
 }
 

@@ -19,4 +19,5 @@ struct AlbumViewConstants {
     static let strokeWidth = -2.0
     static let leading: CGFloat = 8
     static let trailing: CGFloat = -8
+    static let defaultImage = #imageLiteral(resourceName: "DefaultAlbumImage")
 }

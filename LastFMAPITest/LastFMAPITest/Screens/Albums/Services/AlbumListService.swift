@@ -11,13 +11,12 @@ import RxSwift
 
 class AlbumListService: LTFMService {
 
-    var offset = 0
-    let limit = 20
+    var page = 0
+    let albumPerPage = 20
 
-//    func getAlbums() -> Observable<[Album]> {APIResponse
     func getAlbums() -> Observable<AlbumListResponse> {
-//        return lastFMAPIClient.request(LastFMAPI.getTop100HiphopAlbums(limit: limit, offset: offset)).asObservable()
-        return lastFMAPIClient.request(LastFMAPI.getTop100HiphopAlbums()).asObservable()
+        page+=1
+        return lastFMAPIClient.request(LastFMAPI.getTop100HiphopAlbums(page: page, albumPerPage: albumPerPage)).asObservable()
     }
 
 

@@ -33,8 +33,10 @@ class AlbumListViewModel: LTFMViewModel {
     func getAlbums() {
         self.loading.onNext(true)
         service.getAlbums().bind { [weak self] albums in
-            let viewModels = self?.getAlbumCellViewModels(with: albums.albums.album)
-            self?.albumCellViewModels.value = viewModels ?? []
+            let viewModels = self?.getAlbumCellViewModels(with: albums.albums.album) ?? []
+            if !viewModels.isEmpty {
+                self?.albumCellViewModels.value += viewModels
+            }
             self?.loading.onNext(false)
             }.disposed(by: disposeBag)
     }

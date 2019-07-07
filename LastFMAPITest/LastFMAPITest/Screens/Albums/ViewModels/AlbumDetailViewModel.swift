@@ -1,6 +1,6 @@
 //
 //  AlbumDetailViewModel.swift
-//  
+//
 //
 //  Created by Ozgun Emre Zor on 07/07/2019.
 //
@@ -50,17 +50,5 @@ class AlbumDetailViewModel: LTFMViewModel {
     func setupAlbum(_ album: Album) {
         self.album = album
     }
-
-
-    //    init(album: Album) {
-    //        self.album = album
-    //        self.albumName = album.name
-    //        self.albumImageURL = URL(string:album.image[AlbumCellViewConstants.imageElement].imageURLString)
-    //        self.publishDate = ""
-    //        self.artists = []
-    //        self.listeners = []
-    //    }
-
     
-
 }

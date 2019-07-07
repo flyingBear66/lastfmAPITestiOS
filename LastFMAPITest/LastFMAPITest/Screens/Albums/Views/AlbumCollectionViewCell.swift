@@ -48,7 +48,7 @@ class AlbumCollectionViewCell: LTFMCollectionViewCell {
     // MARK: - Helpers
     func setupViews() {
 
-        backgroundColor = .blue
+        backgroundColor = .lightGray
         clipsToBounds = true
         layer.cornerRadius = CGFloat(AlbumViewConstants.cornerRadius)
 
@@ -73,11 +73,12 @@ class AlbumCollectionViewCell: LTFMCollectionViewCell {
         self.albumNameLabel.attributedText = NSAttributedString(string: self.viewModel.albumName, attributes: strokeTextAttributes)
 
         guard let imageURL = self.viewModel.albumImageURL else {
+            
             return
         }
 
         self.albumImageView.af_setImage(withURL: imageURL ,
-                                        placeholderImage: nil,
+                                        placeholderImage: AlbumViewConstants.defaultImage,
                                         filter: nil,
                                         progress: nil,
                                         progressQueue: DispatchQueue.main,

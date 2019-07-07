@@ -21,8 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.application = Application(window: window)
         self.window = window
 
-        // Libraries to set up
+        // Run Helper Functions
         AppDelegateHelper.setupLibrariesOnLaunch()
+        AppDelegateHelper.incrementOpeningCount()
         
         // Start app first Screen
         self.application?.navigation.openFirstScreenAlbumList()

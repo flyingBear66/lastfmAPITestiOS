@@ -14,6 +14,7 @@ class LTFMViewController: UIViewController {
 
     // MARK: - Variables
     var disposeBag = DisposeBag()
+    var loading = false
     
     // MARK: - View LifeCycle
     init() {
@@ -27,6 +28,11 @@ class LTFMViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         DDLogInfo("\(String(describing: self)) viewDidLoad")
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AppDelegateHelper.showAppStoreReviewIfNecessary()
     }
 
 }

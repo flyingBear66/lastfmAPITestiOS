@@ -52,8 +52,10 @@
 		FB01B3F322D0202E00D6217C /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB01B3F222D0202E00D6217C /* Albums.swift */; };
 		FB0A626E22D18A2300D37371 /* wikiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A626D22D18A2300D37371 /* wikiData.swift */; };
 		FB0A627022D18EBA00D37371 /* LTFMViewController+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A626F22D18EBA00D37371 /* LTFMViewController+ActivityIndicator.swift */; };
+		FB0A627422D18FC100D37371 /* AlbumDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A627322D18FC100D37371 /* AlbumDetailViewModel.swift */; };
+		FB0A627722D1924F00D37371 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A627622D1924F00D37371 /* UserDefaultsKey.swift */; };
+		FB0A627922D1925C00D37371 /* HelperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A627822D1925C00D37371 /* HelperConstants.swift */; };
 		FB11A20222D1695600B53825 /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB11A20122D1695600B53825 /* AlbumDetailViewController.swift */; };
-		FB11A20422D16AC300B53825 /* AlbumDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB11A20322D16AC300B53825 /* AlbumDetailViewModel.swift */; };
 		FB11A20622D16C9700B53825 /* AlbumDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB11A20522D16C9700B53825 /* AlbumDetailService.swift */; };
 		FB11A20822D16CD500B53825 /* AlbumDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB11A20722D16CD500B53825 /* AlbumDetailResponse.swift */; };
 		FB11A20A22D1862600B53825 /* AlbumDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB11A20922D1862600B53825 /* AlbumDetail.swift */; };
@@ -136,8 +138,10 @@
 		FB01B3F222D0202E00D6217C /* Albums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
 		FB0A626D22D18A2300D37371 /* wikiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wikiData.swift; sourceTree = "<group>"; };
 		FB0A626F22D18EBA00D37371 /* LTFMViewController+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LTFMViewController+ActivityIndicator.swift"; sourceTree = "<group>"; };
+		FB0A627322D18FC100D37371 /* AlbumDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewModel.swift; sourceTree = "<group>"; };
+		FB0A627622D1924F00D37371 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		FB0A627822D1925C00D37371 /* HelperConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperConstants.swift; sourceTree = "<group>"; };
 		FB11A20122D1695600B53825 /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
-		FB11A20322D16AC300B53825 /* AlbumDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlbumDetailViewModel.swift; path = ../../../../AlbumDetailViewModel.swift; sourceTree = "<group>"; };
 		FB11A20522D16C9700B53825 /* AlbumDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailService.swift; sourceTree = "<group>"; };
 		FB11A20722D16CD500B53825 /* AlbumDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailResponse.swift; sourceTree = "<group>"; };
 		FB11A20922D1862600B53825 /* AlbumDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetail.swift; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 		9E5F3E8322CEBB41007BAFA9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FB0A627522D1924200D37371 /* Constants */,
 				FB01B3D322CFF03C00D6217C /* Helpers */,
 				9E5F3EC122CEC514007BAFA9 /* Models */,
 			);
@@ -311,8 +316,8 @@
 			isa = PBXGroup;
 			children = (
 				FB01B3E622CFFA3E00D6217C /* AlbumCellViewModel.swift */,
-				FB11A20322D16AC300B53825 /* AlbumDetailViewModel.swift */,
 				9E5F3EB022CEBFAE007BAFA9 /* AlbumListViewModel.swift */,
+				FB0A627322D18FC100D37371 /* AlbumDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -463,6 +468,15 @@
 			isa = PBXGroup;
 			children = (
 				FB01B3E422CFF35800D6217C /* AlbumsConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		FB0A627522D1924200D37371 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				FB0A627622D1924F00D37371 /* UserDefaultsKey.swift */,
+				FB0A627822D1925C00D37371 /* HelperConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -731,7 +745,6 @@
 				9E5F3EB822CEC333007BAFA9 /* AlbumListService.swift in Sources */,
 				9E5F3EA522CEBE40007BAFA9 /* UIView+Constraints.swift in Sources */,
 				9E5F3E9B22CEBDAF007BAFA9 /* LTFMCollectionViewCell.swift in Sources */,
-				FB11A20422D16AC300B53825 /* AlbumDetailViewModel.swift in Sources */,
 				FB01B3F122D01FF900D6217C /* AlbumListResponse.swift in Sources */,
 				9E5F3EBE22CEC49E007BAFA9 /* Endpoint.swift in Sources */,
 				FB01B3E722CFFA3E00D6217C /* AlbumCellViewModel.swift in Sources */,
@@ -739,7 +752,9 @@
 				9E5F3EBC22CEC492007BAFA9 /* AlamofireHTTPClient.swift in Sources */,
 				9E5F3EC322CEC529007BAFA9 /* Album.swift in Sources */,
 				9E5F3E8222CEB986007BAFA9 /* Navigation.swift in Sources */,
+				FB0A627722D1924F00D37371 /* UserDefaultsKey.swift in Sources */,
 				FB01B3E922D0115000D6217C /* Artist.swift in Sources */,
+				FB0A627422D18FC100D37371 /* AlbumDetailViewModel.swift in Sources */,
 				9E5F3E9122CEBC1B007BAFA9 /* LTFMViewController.swift in Sources */,
 				9E5F3EAD22CEBEBE007BAFA9 /* LTFMLightLabel.swift in Sources */,
 				FB11A21222D187F900B53825 /* TracksData.swift in Sources */,
@@ -754,6 +769,7 @@
 				9E5F3E8022CEB97B007BAFA9 /* Application.swift in Sources */,
 				9E5F3E5222CEB768007BAFA9 /* AppDelegate.swift in Sources */,
 				9E5F3EA922CEBEA4007BAFA9 /* LTFMHeavyLabel.swift in Sources */,
+				FB0A627922D1925C00D37371 /* HelperConstants.swift in Sources */,
 				FB11A21122D187F900B53825 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

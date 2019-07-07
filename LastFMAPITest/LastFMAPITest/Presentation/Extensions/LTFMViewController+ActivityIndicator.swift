@@ -15,10 +15,12 @@ extension LTFMViewController {
 
     public func showLoadingIndicator() {
         SVProgressHUD.show()
+        self.loading = true
     }
 
     public func hideLoadingIndicator() {
         SVProgressHUD.dismiss()
+        self.loading = false
     }
 
 }
